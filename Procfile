@@ -1,1 +1,1 @@
-web: python manage.py migrate && gunicorn sitealto.wsgi
+web: python manage.py migrate && gunicorn melhorrotadeploy.wsgi
