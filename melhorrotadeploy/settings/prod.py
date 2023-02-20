@@ -15,7 +15,7 @@ DATABASES = {
     'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
 }
 
-CSRF_TRUSTED_ORIGINS = ["melhor-rota-deploy-production.up.railway.app"]
+CSRF_TRUSTED_ORIGINS = ["https://melhor-rota-deploy-production.up.railway.app"]
 
 # HTTPS settings
 
