@@ -1,0 +1,27 @@
+{% load static %}
+    <header>
+      <nav>
+        <div class="logo-container"><a class="logo" href="/">MELHOR ROTA</a></div>
+        <div class="mobile-menu">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+        <ul class="nav-list">
+          <li><a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a></li>
+          <li><a class="nav-link" href="{% url 'rotas' %}">Roteirizador</a></li>
+          <li><a class="nav-link" href="{% url 'home' %}#service-section">Serviços</a></li>
+          <li><a class="nav-link" href="{% url 'home' %}#convite-contato">Contato</a></li>
+
+            {% if request.user.is_authenticated %}
+                <li><a class="nav-link" href="{% url 'profile' user.id %}">Perfil</a></li>
+                <li><a class="btn btn-primary button btn-theme-aquamarine my-1" href="{% url 'logout' %}">Logout</a></li>
+
+            {% else %}
+                <li><a class="btn btn-primary button btn-theme-aquamarine my-1" href="{% url 'login' %}">Login</a></li>
+            {% endif %}
+
+        </ul>
+      </nav>
+    </header>
+    <script src="{% static 'js/mobile_navbar.js' %}"></script>

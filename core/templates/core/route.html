@@ -1,0 +1,64 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block extend_head %}
+
+<script src='https://www.google.com/recaptcha/api.js?render={{recaptcha_site_key}}'></script>
+
+{% endblock %}
+
+
+{% block content %}
+<div id="route-container">
+
+<h3>Calculadora de Rotas</h3>
+
+
+    <div class="field">
+
+        <label for="start">Endereço de Origem</label>
+        <input type="text" placeholder="*Digite o endereço" id="start" name="start">
+
+        <input type="hidden" class="geo" id="id-lat-s" value="">
+        <input type="hidden" class="geo" id="id-long-s" value="">
+    <br>
+        <label for="end">Endereço de Destino</label>
+        <input type="text" placeholder="*Digite o endereço" id="end" name="end">
+
+       <input type="hidden" class="geo" id="id-lat-e" value="">
+       <input type="hidden" class="geo" id="id-long-e" value="">
+
+    </div>
+
+    <div class="container" id="dynamicInput">
+        <h3>Insira aqui todas as paradas da rota:</h3>
+    </div>
+
+    <input type="button" class="addbutton" value="Adicionar parada" onclick="addWaypoint('dynamicInput')">
+    <input type="button" class="calcbutton" id="getdir" value="Melhor Rota!">
+
+<div id="result-panel">
+    <div id="map-canvas"></div>
+    <div id="route-info">
+        <div id="waypoints-results"></div>
+        <div id="total"></div>
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+{% block extend_footer %}
+
+<script type="text/javascript">
+
+    var google_api_key = "{{google_api_key|safe}}";
+
+</script>
+
+
+<script async defer src="{% static 'js/google_places.js' %}"></script>
+
+</div>
+{% endblock %}

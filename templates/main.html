@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %} {# precisamos permitir que o Django use a static tag #}
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv='X-UA-Compatible' content="IE=edge">
+    <meta name="viewport" content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'styles/custom.css' %}"> {# href indica onde está o arquivo de style #}
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">
+      {% block extend_head %}
+
+      {% endblock %}
+    <title>Melhor Rota</title>
+</head>
+<body>
+    <div id="wrapper">
+
+    {% include 'navbar.html' %}
+
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+
+    {% block content %}
+
+    {% endblock %}
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+    {% include 'footer.html' %}
+
+    {% block extend_footer %}
+
+    {% endblock %}
+    </div>
+
+
+</body>
+</html>
