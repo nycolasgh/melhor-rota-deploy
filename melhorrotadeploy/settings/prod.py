@@ -4,7 +4,7 @@ import dj_database_url
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['web-production-fe7b.up.railway.app']
+ALLOWED_HOSTS = ['melhor-rota-deploy-production.up.railway.app']
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
@@ -15,7 +15,7 @@ DATABASES = {
     'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
 }
 
-CSRF_TRUSTED_ORIGINS = ["web-production-fe7b.up.railway.app"]
+CSRF_TRUSTED_ORIGINS = ["melhor-rota-deploy-production.up.railway.app"]
 
 # HTTPS settings
 
