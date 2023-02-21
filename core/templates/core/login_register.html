@@ -1,38 +1,41 @@
 {% extends 'main.html' %}
 
 {% block content %}
+<div id="gradient-background">
+    <div id="login-box">
+        {% if page == 'login' %}
+        <div>
+            <form method="POST" action="">
+                {% csrf_token %}
 
-{% if page == 'login' %}
-<div>
-    <form method="POST" action="">
-        {% csrf_token %}
+                <label>Nome de Usuário:</label>
+                <input type="text" name="username" placeholder="Digite seu username."/>
+                <br>
+                <label>Senha:</label>
+                <input type="password" name="password" placeholder="Digite sua senha.">
 
-        <label>Nome de Usuário:</label>
-        <input type="text" name="username" placeholder="Digite seu username."/>
+                <input type="submit" placeholder="Login">
+            </form>
 
-        <label>Senha:</label>
-        <input type="password" name="password" placeholder="Digite sua senha.">
+            <span>Ainda não se cadastrou em nosso site?</span>
+            <a href="{% url 'register' %}">Cadastre-se</a>
 
-        <input type="submit" placeholder="Login">
-    </form>
+        </div>
 
-    <span>Ainda não se cadastrou em nosso site?</span>
-    <a href="{% url 'register' %}">Cadastre-se</a>
+        {% else %}
 
+        <div>
+            <form method="POST" action="">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Cadastrar!">
+            </form>
+
+            <span>Já tem cadastro em nosso site?</span>
+            <a href="{% url 'login' %}">Login</a>
+        </div>
+        {% endif %}
+    </div>
 </div>
-
-{% else %}
-
-<div>
-    <form method="POST" action="">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Cadastrar!">
-    </form>
-
-    <span>Já tem cadastro em nosso site?</span>
-    <a href="{% url 'login' %}">Login</a>
-</div>
-{% endif %}
 
 {% endblock %}

@@ -6,11 +6,24 @@
 {# Banner Section #}
     <div id="banner-section">
         <div id="banner-copy">
-        <h1>Otimize suas entregas<br> com a melhor rota</h1>
+        <h1>Otimize suas entregas com a melhor rota!</h1>
         <h2>Descubra o caminho ideal<br>entre diversos endereços e<br><b>economize tempo e combustível</b></h2>
-        <div id="register-btn"><a href="{% url 'register' %}">Cadastre-se e teste grátis por 7 dias</a></div>
+        <div id="register-btn"><a href="{% url 'register' %}">Teste grátis por 7 dias</a></div>
         </div>
         <img id="banner-image" src="{% static 'images/mapa.png' %}">
+    </div>
+
+{# Vantages Section#}
+  <div id="vant-section">
+        <div id="van1">
+        <h4>Economize tempo!</h4>
+        <p>Você não precisa mais ficar pensando qual o melhor caminho para realizar suas entregas.</p>
+        </div>
+        <div id="van1">
+        <h4>Economize dinheiro!</h4>
+        <p>Chega de gastar errando o caminho ou realizando uma rota não otimizada.</p>
+        </div>
+
     </div>
 
 {% endblock %}

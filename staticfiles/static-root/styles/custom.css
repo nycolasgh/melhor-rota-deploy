@@ -176,6 +176,8 @@ nav {
     background: #009B72;
     border-radius: 1rem;
     padding: 0rem 1rem;
+    position: relative;
+    right: 1rem;
 }
 
 #register-btn {
@@ -260,6 +262,10 @@ nav {
     #route-container {
         padding: 2rem 2rem;
     }
+
+    #footer {
+        padding: 2rem 2rem;
+    }
 }
 
 #map-canvas {
@@ -289,7 +295,18 @@ nav {
     margin: 1rem 0rem 0rem 0rem; /* up right down left */
 }
 
-input[type=text], input[type=email], input[type=password], select, textarea {
+input[type=text], input[type=email], input[type=password] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  resize: vertical;
+}
+
+input[type=select], input[type=textarea] {
   width: 90%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -535,4 +552,39 @@ input, select,
 input:hover,
 .btn:hover {
   opacity: 1;
+}
+
+footer {
+    display: flex;
+    flex-flow: row nowrap;
+    color: black;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2rem 4rem;
+}
+
+footer h3 {
+    font-size: 1rem;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+#gradient-background {
+    background: rgb(81,187,254);
+    background: linear-gradient(114deg, rgba(81,187,254,1) 0%, rgba(146,191,177,1) 70%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+}
+
+#login-box {
+    width: 60%;
+    height: 60%;
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
 }
