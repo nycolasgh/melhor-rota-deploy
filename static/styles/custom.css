@@ -189,9 +189,6 @@ nav {
     padding: 1rem;
     justify-content: center;
     align-items: center;
-}
-
-#register-btn a {
     color: white;
     text-decoration: none;
 }
@@ -582,9 +579,12 @@ footer p {
 }
 
 #login-box {
+    display: flex;
     width: 60%;
-    height: 60%;
+    height: 80%;
     background: white;
-    padding: 2rem;
+    padding: 2rem 4rem;
     border-radius: 1rem;
+    justify-content: space-around;
+    align-items: center;
 }
