@@ -1,5 +1,5 @@
-sitealto/settings/local.py
-sitealto/settings/dev.py
+melhorrotadeploy/settings/local.py
+melhorrotadeploy/settings/dev.py
 .env
 
 db.sqlite3
