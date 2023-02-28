@@ -588,3 +588,46 @@ footer p {
     justify-content: space-around;
     align-items: center;
 }
+
+#vant-section {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.05);
+    height: 50vh;;
+    width: 100%;
+}
+
+.vantage {
+    border-radius: 1rem;
+    background: white;
+    width: 20%;
+    height: 70%;
+    margin: 2rem 0.5rem;
+    padding: 1rem;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.vantage p {
+   text-align: center;
+}
+
+/* Route Page */
+
+#result-links {
+    margin: 2rem 0rem;
+
+}
+
+#result-links a {
+    text-decoration: none;
+    background-color: #33b5ff;
+    padding: 1rem;
+    color: white;
+    font-weight: 500;
+    border-radius: 4rem;
+}

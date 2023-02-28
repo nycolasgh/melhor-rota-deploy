@@ -75,18 +75,47 @@ function calculateAndDisplayRoute() {
   },
   function(response, status) {
     if (status === 'OK') {
-      directionsDisplay.setDirections(response);
-      const route = response.routes[0];
-      console.log(route.waypoint_order);
-      const summaryPanel = document.getElementById("waypoints-results");
+        directionsDisplay.setDirections(response);
+        computeTotalDistance(response);
+        const route = response.routes[0];
+        const wayptOrder = route.waypoint_order;
 
-      summaryPanel.innerHTML = "<h3>Aqui está a melhor rota!</h3>";
+        console.log(route.waypoint_order);
+        console.log(route);
 
-            // For each route, display summary information.
-      for (let i = 0; i < route.legs.length; i++) {
-        const routeSegment = i + 1;
-        summaryPanel.innerHTML +=
-          "<b>Parada " + routeSegment + "</b><br>";
+        // maps url parse
+
+        //Extract the origin and destination addresses from the html element and encode
+        const originUrl = encodeURIComponent(document.getElementById('start').value);
+        const destinationUrl = encodeURIComponent(document.getElementById('end').value);
+        let waypoints = ''
+        const wayptsArray = waypts.map(obj => obj.location);
+
+        for (let i = 0; i < wayptOrder.length; i++) {
+          waypoints += wayptsArray[route.waypoint_order[i]];
+          if (i < wayptOrder.length - 1) {
+            waypoints += '|';
+          }
+        }
+
+        wayptsUrl = encodeURIComponent(waypoints);
+
+        // Construct the Google Maps universal URL
+        let url = "https://www.google.com/maps/dir/?api=1&origin=" + originUrl + "&destination=" + destinationUrl + "&waypoints=" + wayptsUrl + "&travelmode=driving&dir_action=navigate";
+
+        // Log the URL
+        console.log(url);
+        console.log(wayptsArray);
+
+        // var para selecionar a div que vai receber a lista de paradas otimizada em ordem
+        const summaryPanel = document.getElementById("waypoints-results");
+
+        summaryPanel.innerHTML = "<h3>Aqui está a melhor rota!</h3>";
+
+        // For each route, display summary information.
+        for (let i = 0; i < route.legs.length; i++) {
+            const routeSegment = i + 1;
+            summaryPanel.innerHTML += "<b>Parada " + routeSegment + "</b><br>";
         if (typeof route.waypoint_order[i] !== 'undefined' && route.waypoint_order[i] !== null) {
             let waypointName = waypts[route.waypoint_order[i]].location.split("-");
             summaryPanel.innerHTML += waypointName[0] + "<br>";
@@ -97,9 +126,9 @@ function calculateAndDisplayRoute() {
         summaryPanel.innerHTML += route.legs[i].end_address + "<br>";
         summaryPanel.innerHTML += route.legs[i].distance.text + "<br><br>";
         }
-      }
+        }
 
-      computeTotalDistance(response);
+         document.getElementById("result-links").innerHTML += "<a href=" + url + " target='_blank'>Ver rota no Google Maps</a>"
 
     } else {
       window.alert('Roteirizador falhou devido ao status: ' + status);
@@ -107,7 +136,7 @@ function calculateAndDisplayRoute() {
   });
 }
 
-var limit = 20;  // Limite de waypoints, a partir de 11 o google cobra um pouco a mais e 23 é o máximo
+var limit = 9;  // Limite de waypoints, a partir de 11 o google cobra um pouco a mais e 23 é o máximo
 var counter = 1;
 var i = 0;
 
@@ -158,6 +187,6 @@ function computeTotalDistance(result) {
     totalDist += myroute.legs[i].distance.value;
     totalTime += myroute.legs[i].duration.value;
   }
-  totalDist = totalDist / 1000.
+  totalDist = totalDist / 1000;
   document.getElementById("total").innerHTML = "<b>Distância Total: </b>" + totalDist.toFixed(2) + " km<br><b>Tempo Total Aproximado: </b>" + (totalTime / 60).toFixed(0) + " minutos";
 }
