@@ -128,7 +128,7 @@ function calculateAndDisplayRoute() {
         }
         }
 
-         document.getElementById("result-links").innerHTML += "<a href=" + url + " target='_blank'>Ver rota no Google Maps</a>"
+         document.getElementById("result-links").innerHTML = "<a href=" + url + " target='_blank'>Ver rota no Google Maps</a>"
 
     } else {
       window.alert('Roteirizador falhou devido ao status: ' + status);
