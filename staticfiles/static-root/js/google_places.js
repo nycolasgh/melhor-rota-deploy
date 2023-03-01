@@ -115,12 +115,12 @@ function calculateAndDisplayRoute() {
         // For each route, display summary information.
         for (let i = 0; i < route.legs.length; i++) {
             const routeSegment = i + 1;
-            summaryPanel.innerHTML += "<b>Parada " + routeSegment + "</b><br>";
+            summaryPanel.innerHTML += "<br><b>Parada " + routeSegment + "</b><br>";
         if (typeof route.waypoint_order[i] !== 'undefined' && route.waypoint_order[i] !== null) {
             let waypointName = waypts[route.waypoint_order[i]].location.split("-");
             summaryPanel.innerHTML += waypointName[0] + "<br>";
             summaryPanel.innerHTML += route.legs[i].end_address + "<br>";
-            summaryPanel.innerHTML += route.legs[i].distance.text + "<br><br>";
+            summaryPanel.innerHTML += route.legs[i].distance.text + "<br>";
         }
         else {
         summaryPanel.innerHTML += route.legs[i].end_address + "<br>";
