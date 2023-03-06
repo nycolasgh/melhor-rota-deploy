@@ -11,7 +11,7 @@
             <br>
             <p>Já tem uma conta? Então faça <a href="{{ login_url }}">login</a>!</p>
         </div>
-        <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+        <form class="signup" id="signup_form" method="post" action="{% url 'home' %}">
           {% csrf_token %}
           {{ form.as_p }}
           {% if redirect_field_value %}
