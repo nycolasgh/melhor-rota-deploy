@@ -18,6 +18,7 @@ const options = {
    bounds: defaultBounds,
    componentRestrictions: {'country': ['br']},
    strictBounds: true,
+   fields: ["formatted_address", "geometry", "name"],
 }
 
 
@@ -91,6 +92,7 @@ function calculateAndDisplayRoute() {
         let waypoints = ''
         const wayptsArray = waypts.map(obj => obj.location);
 
+        // For para ajustar os waypoints na ordem que a response do método retorna
         for (let i = 0; i < wayptOrder.length; i++) {
           waypoints += wayptsArray[route.waypoint_order[i]];
           if (i < wayptOrder.length - 1) {
@@ -98,6 +100,7 @@ function calculateAndDisplayRoute() {
           }
         }
 
+        //Depois de juntar todos waypoints em uma string, a gente transforma ela em url
         wayptsUrl = encodeURIComponent(waypoints);
 
         // Construct the Google Maps universal URL
@@ -128,15 +131,25 @@ function calculateAndDisplayRoute() {
         }
         }
 
-         document.getElementById("result-links").innerHTML = "<a href=" + url + " target='_blank'>Ver rota no Google Maps</a>"
+         document.getElementById("result-links").innerHTML = "<a href=" + url + " target='_blank'>Ver rota no Google Maps</a><button id='copy-button'>Copiar Link</button>";
+         const copyButton = document.getElementById('copy-button');
 
+         copyButton.addEventListener('click', () => {
+            const input = document.createElement('input');
+            input.setAttribute('value', url);
+            document.body.appendChild(input);
+            input.select();
+            document.execCommand('copy');
+            document.body.removeChild(input);
+            alert('Link copiado para a área de transferência!');
+        });
     } else {
       window.alert('Roteirizador falhou devido ao status: ' + status);
     }
   });
 }
 
-var limit = 9;  // Limite de waypoints, a partir de 11 o google cobra um pouco a mais e 23 é o máximo
+var limit = 20;  // Limite de waypoints, a partir de 11 o google cobra um pouco a mais e 23 é o máximo
 var counter = 1;
 var i = 0;
 

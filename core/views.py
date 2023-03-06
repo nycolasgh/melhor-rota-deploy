@@ -9,7 +9,7 @@ from .models import *
 
 
 # Create your views here.
-
+"""
 def loginPage(request):
     page = 'login'
 
@@ -59,6 +59,8 @@ def registerPage(request):
 
     return render(request, 'core/login_register.html', {'form': form})
 
+"""
+
 
 def userProfile(request, pk):
     context = {}
@@ -69,7 +71,7 @@ def home(request):
     context = {}
     return render(request, 'core/home.html', context)
 
-@login_required(login_url='login')
+@login_required(login_url='account_login')
 def route(request):
     context = {"google_api_key": settings.GOOGLE_API_KEY}
     return render(request, 'core/route.html', context)

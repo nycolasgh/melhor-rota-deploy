@@ -8,15 +8,20 @@
         <div id="banner-copy">
         <h1>Otimize suas entregas com a melhor rota!</h1>
         <h2>Descubra o caminho ideal<br>entre diversos endereços e<br><b>economize tempo e combustível</b></h2>
-        <a id="register-btn" href="{% url 'register' %}">Teste grátis por 7 dias</a>
+        <a id="register-btn" href="{% url 'account_signup' %}">Teste grátis por 7 dias</a>
         </div>
         <img id="banner-image" src="{% static 'images/mapa.png' %}">
     </div>
 
 {# Vantages Section#}
   <div id="vant-section">
-      <div id="van-img">
-          <img src="{% static 'images/van-cargo.png' %}">
+      <div id="vant-title-wrapper">
+          <div>
+          <h2>Vantagens</h2>
+          </div>
+          <div id="van-img">
+              <img src="{% static 'images/van-cargo.png' %}">
+          </div>
       </div>
       <div id="vant-list">
           <div class="vantage-container">
@@ -42,9 +47,12 @@
           </div>
       </div>
 
+
     </div>
 
     <div id="clients-section">
+
+
 
     </div>
 
