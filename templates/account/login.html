@@ -14,6 +14,7 @@
             {% get_providers as socialaccount_providers %}
 
             {% if socialaccount_providers %}
+
             <p>Entre com sua conta existente ou <a href="{{ signup_url }}">cadastre-se</a></p>
 
             <div class="socialaccount_ballot">
@@ -36,7 +37,7 @@
             {% endif %}
         </div>
 
-        <form class="login" method="POST" action="{% url 'account_login' %}">
+        <form class="login" method="POST" action="{% url 'home' %}">
           {% csrf_token %}
           {{ form.as_p }}
           {% if redirect_field_value %}
