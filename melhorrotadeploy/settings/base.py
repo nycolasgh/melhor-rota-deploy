@@ -127,8 +127,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "staticfiles", "media-root")
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # ALLAUTH Settings
-ACCOUNT_EMAIL_REQUIRED = False
-# ACCOUNT_EMAIL_VERIFICATION = "mandatory"
-ACCOUNT_SIGNUP_REDIRECT_URL = '/'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+ACCOUNT_SIGNUP_REDIRECT_URL = 'confirm-email'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
