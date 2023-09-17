@@ -24,4 +24,10 @@ urlpatterns = [
     path('', include('core.urls')),
     path('accounts/', include('allauth.urls')),
 
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # para usar localmente, estamos testando na aws
+
+""" Config para utilização junto ao S3 ou serviços similares
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_URL)
+    """

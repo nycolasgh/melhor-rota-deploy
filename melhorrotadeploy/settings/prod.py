@@ -2,9 +2,9 @@ from .base import *
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['ec2-15-228-189-0.sa-east-1.compute.amazonaws.com']
+ALLOWED_HOSTS = ['ec2-15-228-189-0.sa-east-1.compute.amazonaws.com','15.228.189.0']
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
