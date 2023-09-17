@@ -1,5 +1,6 @@
 melhorrotadeploy/settings/local.py
 melhorrotadeploy/settings/dev.py
 .env
+Procfile
 
 db.sqlite3

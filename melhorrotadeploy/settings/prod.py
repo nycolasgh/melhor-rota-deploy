@@ -1,5 +1,5 @@
 from .base import *
-import dj_database_url
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -9,10 +9,16 @@ ALLOWED_HOSTS = ['melhor-rota-deploy-production.up.railway.app']
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASE_URL = os.getenv("DATABASE_URL")
 
 DATABASES = {
-    'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.getenv("PGDATABASE"),
+        'USER': os.getenv("PGUSER"),
+        'PASSWORD': os.getenv("PGPASSWORD"),
+        'HOST': os.getenv("PGHOST"),
+        'PORT': os.getenv("PGPORT"),
+    }
 }
 
 CSRF_TRUSTED_ORIGINS = ["https://melhor-rota-deploy-production.up.railway.app"]
@@ -36,3 +42,6 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'melhorrota.contato@gmail.com'
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_PASSWORD")
+
+# ALLAUTH
+ACCOUNT_DEFAULT_HTTP_PROTOCOL = "https"

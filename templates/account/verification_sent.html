@@ -1,16 +1,14 @@
 {% extends "main.html" %}
 
-
-{% load i18n %}
-
-{% block head_title %}{% trans "Verify Your E-mail Address" %}{% endblock %}
+{% block head_title %}Verifique seu E-mail{% endblock %}
 
 {% block content %}
 <div id="gradient-background">
     <div id="login-box">
-        <h1>{% trans "Verify Your E-mail Address" %}</h1>
+        <h1>Verifique seu endereço de e-mail</h1>
 
-        <p>{% blocktrans %}We have sent an e-mail to you for verification. Follow the link provided to finalize the signup process. If you do not see the verification e-mail in your main inbox, check your spam folder. Please contact us if you do not receive the verification e-mail within a few minutes.{% endblocktrans %}</p>
+        <p>Nós mandamos um e-mail para você autenticar sua conta, basta clicar no link de verificação e você será direcionado de volta para nosso site.
+        Caso não receba esse e-mail nos próximos minutos, verifique sua caixa de spam. Se não estiver lá, entre em contato conosco!</p>
     </div>
 </div>
 

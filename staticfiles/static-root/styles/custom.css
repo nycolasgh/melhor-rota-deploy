@@ -100,13 +100,16 @@ nav {
 }
 
 #banner-copy {
-    width: 55%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
 }
 
 #banner-copy h1 {
     color: white;
     font-weight: 900;
     font-size: 3rem;
+    line-height: 1;
 }
 
 #banner-copy h2 {
@@ -127,7 +130,7 @@ nav {
 #register-btn {
     display: flex;
     width: 30vw;
-    margin: 1rem 0rem 2rem 0rem;
+    margin: 1rem 0rem 0rem 0rem;
     background: #FE4A49;
     border-radius: 2rem;
     padding: 1rem;
@@ -516,7 +519,7 @@ footer p {
     width: 100%;
     justify-content: space-between;
     background: rgba(0, 0, 0, 0.05);
-    align-items: flex-start;
+    align-items: center;
 }
 
 #vant-title-wrapper {
@@ -626,32 +629,77 @@ footer p {
         width: 100%;
     }
 
-  #wrapper {
-    overflow-x: hidden;
-    position: relative
-  }
-  .nav-list {
-    position: absolute;
-    top: 10vh;
-    right: 0;
-    width: 50%;
-    height: 90vw;
-    background: white;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in;
-  }
-  .nav-list li {
-    margin-left: 0;
-    opacity: 0;
-    width: auto;
-  }
+    #wrapper {
+        overflow-x: hidden;
+        position: relative
+    }
 
-  .mobile-menu {
-    display: block;
-  }
+    .nav-list {
+        position: absolute;
+        top: 10vh;
+        right: 0;
+        width: 50%;
+        height: 90vw;
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+    }
+    .nav-list li {
+        margin-left: 0;
+        opacity: 0;
+        width: auto;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+        #banner-section {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        padding: 32px 16px;
+    }
+
+    #banner-copy {
+        width: 100%;
+        padding: 0;
+        align-content: center;
+        justify-content: center;
+        text-align: center;
+
+    }
+
+    #banner-copy h1{
+        font-size: 32px;
+        width: 100%;
+    }
+
+    #banner-copy h2{
+        font-size: 16px;
+        width: 100%;
+    }
+
+    #banner-copy h2 b{
+        padding: 0rem 1rem;
+        position: relative;
+        right: 0;
+    }
+
+
+    #register-btn {
+        width: 50vw;
+        margin: 0rem;
+        align-self: center;
+
+    }
+
+    #banner-image {
+        width: 70vw;
+    }
 
      #vant-title-wrapper img {
         display: none;
@@ -694,41 +742,16 @@ footer p {
       background: white;
       height: 10vh;
       width: 100%;
-      padding: 0rem 2rem;
+      padding: 0rem 16px;
     }
 
-    #banner-section {
-        display: flex;
-        flex-flow: column;
-        padding: 2rem 2rem;
-    }
-
-    #banner-copy {
-        width: 100%;
-        padding: 0;
-    }
-
-    #banner-copy h1{
-        font-size: 3rem;
-        width: 100%;
-    }
-
-    #register-btn {
-        width: 70vw;
-        margin: 1rem 0rem 0rem 0rem;
-    }
-
-    #banner-image {
-        width: 70vw;
-    }
 
     #route-container {
         padding: 2rem 2rem;
     }
 
     #footer {
-        margin-top: 2rem;
-        padding: 2rem 2rem;
+        padding: 2rem 16px;
     }
 
      #vant-section {
@@ -750,3 +773,45 @@ footer p {
 
 
 }
+
+ .pizza {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        background-image: url('https://img.freepik.com/free-photo/thinly-sliced-pepperoni-is-popular-pizza-topping-american-style-pizzerias-isolated-white-background-still-life_639032-229.jpg?w=1380&t=st=1678734945~exp=1678735545~hmac=e9dd8784c4a0e3167b5adc53c67e3ca34a03c3a476824e6f8d3109b9821404c6');
+        background-size: cover;
+        cursor: pointer;
+      }
+      .slice {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: bottom center;
+      }
+      .slice1 {
+        transform: rotate(0deg) translate(-50%, -50%) rotate(0deg);
+      }
+      .slice2 {
+        transform: rotate(45deg) translate(-50%, -50%) rotate(-45deg);
+      }
+      .slice3 {
+        transform: rotate(90deg) translate(-50%, -50%) rotate(-90deg);
+      }
+      .slice4 {
+        transform: rotate(135deg) translate(-50%, -50%) rotate(-135deg);
+      }
+      .slice5 {
+        transform: rotate(180deg) translate(-50%, -50%) rotate(-180deg);
+      }
+      .slice6 {
+        transform: rotate(225deg) translate(-50%, -50%) rotate(-225deg);
+      }
+      .slice7 {
+        transform: rotate(270deg) translate(-50%, -50%) rotate(-270deg);
+      }
+      .slice8 {
+        transform: rotate(315deg) translate(-50%, -50%) rotate(-315deg);
+      }
+      .slice.selected {
+        display: none;
+      }

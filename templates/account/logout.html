@@ -1,15 +1,13 @@
 {% extends "main.html" %}
 
-{% load i18n %}
-
-{% block head_title %}{% trans "Sign Out" %}{% endblock %}
+{% block head_title %}Logout{% endblock %}
 
 {% block content %}
 <div id="gradient-background">
     <div id="login-box">
-        <h1>{% trans "Sign Out" %}</h1>
+        <h1>Sair da Conta</h1>
 
-        <p>{% trans 'Are you sure you want to sign out?' %}</p>
+        <p>Tem certeza que quer sair da sua conta?</p>
 
         <form method="post" action="{% url 'account_logout' %}">
           {% csrf_token %}
@@ -17,7 +15,7 @@
           <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
           {% endif %}
         <br>
-          <button type="submit">{% trans 'Sign Out' %}</button>
+          <button type="submit">Sair</button>
         </form>
     </div>
 </div>
