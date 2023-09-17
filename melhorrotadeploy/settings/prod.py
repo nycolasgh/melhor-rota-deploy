@@ -4,7 +4,7 @@ from .base import *
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['melhor-rota-deploy-production.up.railway.app']
+ALLOWED_HOSTS = ['ec2-15-228-189-0.sa-east-1.compute.amazonaws.com']
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
@@ -21,7 +21,7 @@ DATABASES = {
     }
 }
 
-CSRF_TRUSTED_ORIGINS = ["https://melhor-rota-deploy-production.up.railway.app"]
+CSRF_TRUSTED_ORIGINS = ["https://ec2-15-228-189-0.sa-east-1.compute.amazonaws.com"]
 
 # HTTPS settings
 
