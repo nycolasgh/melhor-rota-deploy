@@ -4,7 +4,7 @@ from .base import *
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ec2-15-228-189-0.sa-east-1.compute.amazonaws.com','15.228.189.0','127.0.0.1']
+ALLOWED_HOSTS = ['ec2-15-228-189-0.sa-east-1.compute.amazonaws.com', '15.228.189.0', 'melhorrota.com.br', 'www.melhorrota.com.br']
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
@@ -21,7 +21,7 @@ DATABASES = {
     }
 }
 
-CSRF_TRUSTED_ORIGINS = ["https://ec2-15-228-189-0.sa-east-1.compute.amazonaws.com"]
+CSRF_TRUSTED_ORIGINS = ["https://ec2-15-228-189-0.sa-east-1.compute.amazonaws.com", "https://melhorrota.com.br", "https://www.melhorrota.com.br", "http://15.228.189.0"]
 
 # HTTPS settings
 

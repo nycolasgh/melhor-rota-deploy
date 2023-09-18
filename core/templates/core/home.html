@@ -4,25 +4,29 @@
 {% block content %}
 
 {# Banner Section #}
-    <div id="banner-section">
+    <div id="banner-section" style="background-image: url('{% static 'images/mapbg.webp' %}');">
+       <div class="overlay" style="opacity: 0.7;"></div>
+        <div class="img-container"><img id="banner-image" src="{% static 'images/mapa-banner.webp' %}"></div>
         <div id="banner-copy">
         <h1>Otimize suas entregas<br>com a melhor rota!</h1>
         <br>
         <h2>Descubra o caminho ideal<br>entre diversos endereços e<br><b>economize tempo e combustível</b></h2>
         <a id="register-btn" href="{% url 'account_signup' %}">Teste grátis por 7 dias</a>
         </div>
-        <img id="banner-image" src="{% static 'images/mapa.png' %}">
+        
     </div>
 
 {# Vantages Section#}
   <div id="vant-section">
       <div id="vant-title-wrapper">
           <div>
-          <h2>Vantagens</h2>
+            <p>Sua empresa realiza <br>rotas de entrega todos os dias?</p><br>
+          <h2>Saiba por que <br>escolher a <br>Melhor Rota!</h2>
           </div>
+          <!--
           <div id="van-img">
               <img src="{% static 'images/van-cargo.png' %}">
-          </div>
+          </div>-->
       </div>
       <div id="vant-list">
           <div class="vantage-container">
@@ -43,7 +47,7 @@
               <img src="{% static 'images/inspiration.png' %}">
               <div class="vantage">
                 <h4>Evite stress!</h4>
-                <p>Nosso roteirizador é fácil de usar e funciona perfeitamente. Além disso, ele calcula sempre a melhor rota evitando o trânsito parado.</p>
+                <p>Nosso roteirizador é simples e intuitivo, ele calcula sempre a melhor rota para suas entregas, evitando o trânsito parado.</p>
               </div>
           </div>
       </div>
@@ -54,6 +58,62 @@
     <div id="clients-section">
 
 
+
+    </div>
+
+    <section id="bonus-section">
+        <div id="bonus-container">
+            <div class="bonus-item">
+                <img src="{% static 'images/pagamento-seguro.svg' %}">
+                <div>
+                    <h5>Segurança no pagamento</h5>
+                    <h6>Disponibilizamos um ambiente 100% seguro para pagamentos, seus dados estão protegidos.</h6>
+                </div>
+            </div>
+            <div class="bonus-item">
+                <img src="{% static 'images/aulas-online.svg' %}">
+                <div>
+                    <h5>Acesso imediato e vitalício</h5>
+                    <h6>Os dados de acesso (login e senha) serão enviados para o seu e-mail logo após a confirmação do pedido.</h6>
+                </div>
+            </div>
+            <div class="bonus-item">
+                <img src="{% static 'images/conversa.svg' %}">
+                <div>
+                    <h5>Tira dúvidas online via Zoom e grupo no WhatsApp</h5>
+                    <h6>Você poderá tirar suas dúvidas diretamente conosco no grupo de
+                        WhatsApp com alunos e na aula inaugural no Zoom.</h6>
+                </div>
+            </div>
+            <div class="bonus-item">
+                <img src="{% static 'images/garantia.svg' %}">
+                <div>
+                    <h5>Garantia de satisfação<br> de 7 dias</h5>
+                    <h6>Voce poderá cancelar sua inscrição e pedir a
+                        devolução de todo seu dinheiro por qualquer motivo.</h6>
+                </div>
+            </div>
+        </div>
+        <div id="bonus-cta-container">
+            <p><b>Clique no botão abaixo</b> e dê o primeiro passo <br> para aprofundar seus conhecimentos com nosso<br> {{ curso.title }}</p>
+            <a class="banner-btn" href="">Quero otimizar minhas entregas!</a>
+            <img src="">
+        </div>
+    </section>
+
+
+    <div id="animation-section">
+
+        <div class="loop-wrapper">
+            <div class="mountain"></div>
+            <div class="hill"></div>
+            <div class="tree"></div>
+            <div class="tree"></div>
+            <div class="tree"></div>
+            <div class="rock"></div>
+            <div class="truck"></div>
+            <div class="wheels"></div>
+          </div> 
 
     </div>
 

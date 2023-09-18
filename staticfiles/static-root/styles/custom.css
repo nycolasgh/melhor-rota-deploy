@@ -12,6 +12,7 @@ html body {
     font-family: 'Montserrat', monospace;
     }
 
+
 nav a {
   color: black;
   text-decoration: none;
@@ -36,10 +37,10 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: white;
+  background: #e8f1f2;
   height: 10vh;
   width: 100%;
-  padding: 0rem 4rem;
+  padding: 0 5%;
 }
 
 .nav-list {
@@ -88,21 +89,41 @@ nav {
     background: white;
 }
 
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #004e89;
+  z-index: 1;
+}
+
 #banner-section {
+    position: relative;
     display: flex;
     flex-flow: row wrap;
-    align-items: center;
-    background: rgb(81,187,254);
-    background: linear-gradient(114deg, rgba(81,187,254,1) 0%, rgba(146,191,177,1) 70%);
+    align-items: start;
+    justify-content: center;
+    gap: 4rem;
     width: 100%;
     margin: 0;
-    padding: 2rem 4rem;
+    padding: 5% 5%;
+    background-color: #004e89;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  background-blend-mode:multiply;
 }
 
 #banner-copy {
     width: 50%;
     display: flex;
     flex-direction: column;
+    z-index: 100;
 }
 
 #banner-copy h1 {
@@ -141,13 +162,24 @@ nav {
 }
 
 #banner-image {
-    width: 40%;
+    width: auto;
     object-fit: contain;
     min-width: auto;
-    max-height: 50vh;
-    position: relative;
-    z-index: 0;
-    animation: float 6s ease-in-out infinite;
+    max-height: 60vh;
+    position: absolute;
+    z-index: 99;
+
+}
+
+.img-container {
+  animation: float 6s ease-in-out infinite;
+  position: relative; 
+  width: 40%;
+  z-index: 200;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
 }
 
 @keyframes float {
@@ -511,14 +543,14 @@ footer p {
     }
 
 #vant-section {
-    padding: 2rem 4rem;
+    padding: 5%;
     display: flex;
     flex-flow: row;
     flex-wrap: nowrap;
     min-height: 60vh;
     width: 100%;
     justify-content: space-between;
-    background: rgba(0, 0, 0, 0.05);
+    background: #e8f1f2;
     align-items: center;
 }
 
@@ -640,12 +672,13 @@ footer p {
         right: 0;
         width: 50%;
         height: 90vw;
-        background: white;
+        background: #004e89;
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
         transform: translateX(100%);
         transition: transform 0.3s ease-in;
+        z-index: 1000;
     }
     .nav-list li {
         margin-left: 0;
@@ -674,12 +707,12 @@ footer p {
     }
 
     #banner-copy h1{
-        font-size: 32px;
+        font-size: 3rem;
         width: 100%;
     }
 
     #banner-copy h2{
-        font-size: 16px;
+        font-size: 1.5rem;
         width: 100%;
     }
 
@@ -774,44 +807,154 @@ footer p {
 
 }
 
- .pizza {
-        position: relative;
-        width: 400px;
-        height: 400px;
-        background-image: url('https://img.freepik.com/free-photo/thinly-sliced-pepperoni-is-popular-pizza-topping-american-style-pizzerias-isolated-white-background-still-life_639032-229.jpg?w=1380&t=st=1678734945~exp=1678735545~hmac=e9dd8784c4a0e3167b5adc53c67e3ca34a03c3a476824e6f8d3109b9821404c6');
-        background-size: cover;
-        cursor: pointer;
-      }
-      .slice {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform-origin: bottom center;
-      }
-      .slice1 {
-        transform: rotate(0deg) translate(-50%, -50%) rotate(0deg);
-      }
-      .slice2 {
-        transform: rotate(45deg) translate(-50%, -50%) rotate(-45deg);
-      }
-      .slice3 {
-        transform: rotate(90deg) translate(-50%, -50%) rotate(-90deg);
-      }
-      .slice4 {
-        transform: rotate(135deg) translate(-50%, -50%) rotate(-135deg);
-      }
-      .slice5 {
-        transform: rotate(180deg) translate(-50%, -50%) rotate(-180deg);
-      }
-      .slice6 {
-        transform: rotate(225deg) translate(-50%, -50%) rotate(-225deg);
-      }
-      .slice7 {
-        transform: rotate(270deg) translate(-50%, -50%) rotate(-270deg);
-      }
-      .slice8 {
-        transform: rotate(315deg) translate(-50%, -50%) rotate(-315deg);
-      }
-      .slice.selected {
-        display: none;
-      }
+
+
+/* animação */
+
+#animation-section {
+  background: #009688;
+  overflow: hidden;
+  padding: 6rem;
+}
+
+.loop-wrapper {
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  width: 600px;
+  height: 250px;
+  overflow: hidden;
+  border-bottom: 3px solid #fff;
+  color: #fff;
+}
+.mountain {
+  position: absolute;
+  right: -900px;
+  bottom: -20px;
+  width: 2px;
+  height: 2px;
+  box-shadow: 
+    0 0 0 50px #4DB6AC,
+    60px 50px 0 70px #4DB6AC,
+    90px 90px 0 50px #4DB6AC,
+    250px 250px 0 50px #4DB6AC,
+    290px 320px 0 50px #4DB6AC,
+    320px 400px 0 50px #4DB6AC
+    ;
+  transform: rotate(130deg);
+  animation: mtn 20s linear infinite;
+}
+.hill {
+  position: absolute;
+  right: -900px;
+  bottom: -50px;
+  width: 400px;
+  border-radius: 50%;
+  height: 20px;
+  box-shadow: 
+    0 0 0 50px #4DB6AC,
+    -20px 0 0 20px #4DB6AC,
+    -90px 0 0 50px #4DB6AC,
+    250px 0 0 50px #4DB6AC,
+    290px 0 0 50px #4DB6AC,
+    620px 0 0 50px #4DB6AC;
+  animation: hill 4s 2s linear infinite;
+}
+.tree, .tree:nth-child(2), .tree:nth-child(3) {
+  position: absolute;
+  height: 100px; 
+  width: 35px;
+  bottom: 0;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/130015/tree.svg) no-repeat;
+}
+.rock {
+  margin-top: -17%;
+  height: 2%; 
+  width: 2%;
+  bottom: -2px;
+  border-radius: 20px;
+  position: absolute;
+  background: #ddd;
+}
+.truck, .wheels {
+  transition: all ease;
+  width: 85px;
+  margin-right: -60px;
+  bottom: 0px;
+  right: 50%;
+  position: absolute;
+  background: #eee;
+}
+.truck {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/130015/truck.svg) no-repeat;
+  background-size: contain;
+  height: 60px;
+}
+.truck:before {
+  content: " ";
+  position: absolute;
+  width: 25px;
+  box-shadow:
+    -30px 28px 0 1.5px #fff,
+     -35px 18px 0 1.5px #fff;
+}
+.wheels {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/130015/wheels.svg) no-repeat;
+  height: 15px;
+  margin-bottom: 0;
+}
+
+.tree  { animation: tree 3s 0.000s linear infinite; }
+.tree:nth-child(2)  { animation: tree2 2s 0.150s linear infinite; }
+.tree:nth-child(3)  { animation: tree3 8s 0.050s linear infinite; }
+.rock  { animation: rock 4s   -0.530s linear infinite; }
+.truck  { animation: truck 4s   0.080s ease infinite; }
+.wheels  { animation: truck 4s   0.001s ease infinite; }
+.truck:before { animation: wind 1.5s   0.000s ease infinite; }
+
+
+@keyframes tree {
+  0%   { transform: translate(1350px); }
+  50% {}
+  100% { transform: translate(-50px); }
+}
+@keyframes tree2 {
+  0%   { transform: translate(650px); }
+  50% {}
+  100% { transform: translate(-50px); }
+}
+@keyframes tree3 {
+  0%   { transform: translate(2750px); }
+  50% {}
+  100% { transform: translate(-50px); }
+}
+
+@keyframes rock {
+  0%   { right: -200px; }
+  100% { right: 2000px; }
+}
+@keyframes truck {
+  0%   { }
+  6%   { transform: translateY(0px); }
+  7%   { transform: translateY(-6px); }
+  9%   { transform: translateY(0px); }
+  10%   { transform: translateY(-1px); }
+  11%   { transform: translateY(0px); }
+  100%   { }
+}
+@keyframes wind {
+  0%   {  }
+  50%   { transform: translateY(3px) }
+  100%   { }
+}
+@keyframes mtn {
+  100% {
+    transform: translateX(-2000px) rotate(130deg);
+  }
+}
+@keyframes hill {
+  100% {
+    transform: translateX(-2000px);
+  }
+}
+
